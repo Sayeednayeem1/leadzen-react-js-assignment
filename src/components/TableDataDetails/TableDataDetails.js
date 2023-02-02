@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DetailsModal from '../DetailsModal/DetailsModal';
 import Loader from '../ReactLoader/Loader';
+import './TableDataDetails.css';
 
 const TableDataDetails = () => {
 
@@ -37,10 +38,10 @@ const TableDataDetails = () => {
     }
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto mt-24'>
             <div>
-                <div className="overflow-x-auto">
-                    <table className="table w-full">
+                <div  className="table-container shadow-xl">
+                    <table className="custom-table">
                         <thead>
                             <tr>
                                 <th>Company</th>
@@ -51,7 +52,7 @@ const TableDataDetails = () => {
                                 <th>Details</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                             {
                                 currentItems.map(detail => <tr key={detail.id}>
                                     <th>{detail.company?.name}</th>
@@ -65,23 +66,23 @@ const TableDataDetails = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="flex justify-around mt-4">
+                <div className="flex justify-around mt-8">
                     <button
-                        className="btn btn-primary"
+                        className="btn bg-gradient-to-r from-purple-500 to-pink-500 border-none"
                         disabled={currentPage === 1}
                         onClick={() => setCurrentPage(currentPage - 1)}
                     >
                         Previous
                     </button>
                     <button
-                        className="btn btn-primary"
+                        className="btn bg-gradient-to-r from-purple-500 to-pink-500 border-none"
                         disabled={currentPage === Math.ceil(details.length / itemsPerPage)}
                         onClick={() => setCurrentPage(currentPage + 1)}
                     >
                         Next
                     </button>
                 </div>
-                <div>
+                <div className='bg-gradient-to-r from-[#9bafd9] to-[#103783]'>
                     {
                         modalDataDetail &&
                         <DetailsModal

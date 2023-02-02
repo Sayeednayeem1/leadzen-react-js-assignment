@@ -6,7 +6,7 @@ const DetailsModal = ({ modalDataDetail }) => {
 
 
     return (
-        <div>
+        <div className='bg-gradient-to-r from-[#9bafd9] to-[#103783]'>
             <input type="checkbox" id="table-details-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-11/12 max-w-5xl">

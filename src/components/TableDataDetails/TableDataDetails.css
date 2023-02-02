@@ -1,0 +1,21 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+.custom-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-table th {
+    font-weight: bold;
+}
