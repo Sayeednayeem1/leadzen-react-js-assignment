@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Time from '../Time/Time';
+import 'animate.css';
 
 const Navbar = () => {
 
     const navItems = <>
-        <li className='text-xl font-bold text-white'> <Link to='/'>Home</Link></li>
+        <li className='text-xl font-bold text-white animate__animated animate__bounce'> <Link to='/'>Home</Link></li>
     </>
 
     return (
@@ -20,7 +21,7 @@ const Navbar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <button className="btn btn-ghost text-white text-xl">Abu Sayed</button>
+                    <button className="btn btn-ghost text-white text-xl animate__animated animate__backInLeft">Abu Sayed</button>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -28,7 +29,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn paginationButton"> <Time /> </button>
+                    <button className="btn paginationButton animate__animated animate__backInRight"> <Time /> </button>
                 </div>
             </div>
         </div>

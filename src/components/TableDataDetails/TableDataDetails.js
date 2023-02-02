@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DetailsModal from '../DetailsModal/DetailsModal';
 import Loader from '../ReactLoader/Loader';
 import './TableDataDetails.css';
+import 'animate.css';
 
 const TableDataDetails = () => {
 
@@ -40,8 +41,8 @@ const TableDataDetails = () => {
     return (
         <div className='container mx-auto mt-24'>
             <div>
-                <div className="table-container shadow-xl">
-                    <table className="custom-table">
+                <div className="table-container shadow-xl  ">
+                    <table className="custom-table animate__animated animate__pulse">
                         <thead>
                             <tr>
                                 <th>Company</th>
@@ -68,14 +69,14 @@ const TableDataDetails = () => {
                 </div>
                 <div className="flex justify-around mt-8">
                     <button
-                        className="btn paginationButton"
+                        className="btn paginationButton animate__animated animate__slideInRight"
                         disabled={currentPage === 1}
                         onClick={() => setCurrentPage(currentPage - 1)}
                     >
                         Previous
                     </button>
                     <button
-                        className="btn paginationButton"
+                        className="btn paginationButton animate__animated animate__slideInRight"
                         disabled={currentPage === Math.ceil(details.length / itemsPerPage)}
                         onClick={() => setCurrentPage(currentPage + 1)}
                     >
