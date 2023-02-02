@@ -1,10 +1,12 @@
 
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import { router } from './router/Router';
 
 function App() {
   return (
     <div className="App">
-      <button className='btn btn-primary'>Test</button>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
