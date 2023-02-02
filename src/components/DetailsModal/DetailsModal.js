@@ -2,16 +2,16 @@ import React from 'react';
 
 const DetailsModal = ({ modalDataDetail }) => {
 
-    const { name, address, company, email, phone, username, website} = modalDataDetail;
+    const { name, address, company, email, phone, username, website } = modalDataDetail;
 
 
     return (
-        <div className='bg-gradient-to-r from-[#9bafd9] to-[#103783]'>
-            <input type="checkbox" id="table-details-modal" className="modal-toggle" />
+        <div>
+            <input type="checkbox" id="table-details-modal" className="modal-toggle " />
             <div className="modal">
                 <div className="modal-box w-11/12 max-w-5xl">
-                    <div className="overflow-x-auto">
-                        <table className="table w-full">
+                    <div className="table-container bg-gradient-to-r from-[#9bafd9] to-[#103783] shadow-lg rounded-md">
+                        <table className="custom-table ">
                             <thead>
                                 <tr>
                                     <th>Company</th>
@@ -36,10 +36,10 @@ const DetailsModal = ({ modalDataDetail }) => {
                             </tbody>
                         </table>
                     </div>
-                    <div className='mt-8'>
-                        <div>
+                    <div className='mt-8 py-10 bg-gradient-to-r from-[#9bafd9] to-[#103783] rounded-md shadow-lg  font-bold'>
+                        <div className='ml-8'>
                             <h2 className=' font-bold mb-1'>Description</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eleifend donec pretium vulputate sapien nec sagittis aliquam. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore <br/> et dolore magna aliqua. Eleifend donec pretium vulputate sapien nec sagittis aliquam. </p>
                         </div>
                         <div>
                             <div className="card  shadow-xl">
