@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DetailsModal from '../DetailsModal/DetailsModal';
 
 const TableDataDetails = () => {
 
@@ -45,7 +46,12 @@ const TableDataDetails = () => {
                     </table>
                 </div>
                 <div>
-                    
+                    {
+                        modalDataDetail &&
+                        <DetailsModal
+                            modalDataDetail={modalDataDetail}
+                        />
+                    }
                 </div>
             </div>
         </div>
