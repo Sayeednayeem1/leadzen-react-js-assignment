@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DetailsModal from '../DetailsModal/DetailsModal';
+import Loader from '../ReactLoader/Loader';
 
 const TableDataDetails = () => {
 
@@ -9,6 +10,16 @@ const TableDataDetails = () => {
     const [modalDataDetail, setModalDataDetail] = useState(null);
     // todo loader state
     const [loading, setLoading] = useState(false);
+
+    // todo pagination states
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
+
+    // todo helper function to get the current items to show on the page
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = details.slice(indexOfFirstItem, indexOfLastItem)
+
 
     useEffect(() => {
         setLoading(true);
@@ -21,8 +32,8 @@ const TableDataDetails = () => {
             });
     }, []);
 
-    if(loading){
-        return ;
+    if (loading) {
+        return <Loader />;
     }
 
     return (
@@ -42,7 +53,7 @@ const TableDataDetails = () => {
                         </thead>
                         <tbody>
                             {
-                                details.map(detail => <tr key={detail.id}>
+                                currentItems.map(detail => <tr key={detail.id}>
                                     <th>{detail.company?.name}</th>
                                     <td>{detail.name}</td>
                                     <td>{detail.email}</td>
@@ -53,6 +64,22 @@ const TableDataDetails = () => {
                             }
                         </tbody>
                     </table>
+                </div>
+                <div className="flex justify-around mt-4">
+                    <button
+                        className="btn btn-primary"
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                    >
+                        Previous
+                    </button>
+                    <button
+                        className="btn btn-primary"
+                        disabled={currentPage === Math.ceil(details.length / itemsPerPage)}
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                    >
+                        Next
+                    </button>
                 </div>
                 <div>
                     {
