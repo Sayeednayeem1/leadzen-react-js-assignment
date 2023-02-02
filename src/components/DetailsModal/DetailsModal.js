@@ -2,7 +2,8 @@ import React from 'react';
 
 const DetailsModal = ({ modalDataDetail }) => {
 
-    const { name, address, company, email, phone, username, website } = modalDataDetail;
+    const { name, address, company, email, phone, username, website} = modalDataDetail;
+
 
     return (
         <div>
@@ -18,7 +19,7 @@ const DetailsModal = ({ modalDataDetail }) => {
                                     <th>Contact</th>
                                     <th>City</th>
                                     <th>Street</th>
-                                    <th>Remove</th>
+                                    <th>Close</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -28,16 +29,66 @@ const DetailsModal = ({ modalDataDetail }) => {
                                     <td>{email}</td>
                                     <td>{address?.city}</td>
                                     <td>{address?.street}</td>
-                                    <td><label className="btn btn-xs bg-orange-600 border-none" >Details</label></td>
+                                    <td><div className="modal-action">
+                                        <label htmlFor="table-details-modal" className="btn btn-xs bg-orange-600 border-none">Close</label>
+                                    </div></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div>
-
-                    </div>
-                    <div className="modal-action">
-                        <label htmlFor="table-details-modal" className="btn btn-xs bg-orange-600 border-none">Close</label>
+                    <div className='mt-8'>
+                        <div>
+                            <h2 className=' font-bold mb-1'>Description</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eleifend donec pretium vulputate sapien nec sagittis aliquam. </p>
+                        </div>
+                        <div>
+                            <div className="card  shadow-xl">
+                                <div className="card-body">
+                                    <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+                                        <div>
+                                            <div className='mr-28'>
+                                                <h1 className=' font-bold'>Person Name</h1>
+                                                <p>{name}</p>
+                                            </div>
+                                            <div>
+                                                <h1 className=' font-bold'>Address</h1>
+                                                <p>{address?.city}</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className='mr-28'>
+                                                <h1 className=' font-bold'>Company</h1>
+                                                <p>{company?.name}</p>
+                                            </div>
+                                            <div>
+                                                <h1 className=' font-bold'>Website</h1>
+                                                <p>{website}</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className='mr-28'>
+                                                <h1 className=' font-bold'>Email</h1>
+                                                <p>{email}</p>
+                                            </div>
+                                            <div>
+                                                <h1 className=' font-bold'>Phone</h1>
+                                                <p>{phone}</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className='mr-28'>
+                                                <h1 className=' font-bold'>User Name</h1>
+                                                <p>{username}</p>
+                                            </div>
+                                            <div>
+                                                <h1 className=' font-bold'>Street</h1>
+                                                <p>{address?.street}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

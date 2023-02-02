@@ -3,18 +3,27 @@ import DetailsModal from '../DetailsModal/DetailsModal';
 
 const TableDataDetails = () => {
 
+    //todo api data state
     const [details, setDetails] = useState([]);
-
+    // todo modal data state
     const [modalDataDetail, setModalDataDetail] = useState(null);
+    // todo loader state
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setDetails(data)
+                setLoading(false);
             });
-    }, [])
+    }, []);
+
+    if(loading){
+        return ;
+    }
 
     return (
         <div className='container mx-auto'>
