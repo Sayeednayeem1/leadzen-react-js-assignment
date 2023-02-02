@@ -3,8 +3,7 @@ import TableDataDetails from '../TableDataDetails/TableDataDetails';
 
 const Home = () => {
     return (
-        <div>
-            <h5>this is home</h5>
+        <div className='container mx-auto mt-12'>
             <TableDataDetails />
         </div>
     );
