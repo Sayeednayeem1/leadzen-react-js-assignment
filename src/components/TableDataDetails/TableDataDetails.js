@@ -40,7 +40,7 @@ const TableDataDetails = () => {
     return (
         <div className='container mx-auto mt-24'>
             <div>
-                <div  className="table-container shadow-xl">
+                <div className="table-container shadow-xl">
                     <table className="custom-table">
                         <thead>
                             <tr>
@@ -60,7 +60,7 @@ const TableDataDetails = () => {
                                     <td>{detail.email}</td>
                                     <td>{detail.address?.city}</td>
                                     <td>{detail.address?.street}</td>
-                                    <td><label htmlFor="table-details-modal" className="btn btn-primary" onClick={() => setModalDataDetail(detail)}>Details</label></td>
+                                    <td><label htmlFor="table-details-modal" className="btn bg-[#103783] border-none" onClick={() => setModalDataDetail(detail)}>Details</label></td>
                                 </tr>)
                             }
                         </tbody>
@@ -68,14 +68,14 @@ const TableDataDetails = () => {
                 </div>
                 <div className="flex justify-around mt-8">
                     <button
-                        className="btn bg-gradient-to-r from-purple-500 to-pink-500 border-none"
+                        className="btn paginationButton"
                         disabled={currentPage === 1}
                         onClick={() => setCurrentPage(currentPage - 1)}
                     >
                         Previous
                     </button>
                     <button
-                        className="btn bg-gradient-to-r from-purple-500 to-pink-500 border-none"
+                        className="btn paginationButton"
                         disabled={currentPage === Math.ceil(details.length / itemsPerPage)}
                         onClick={() => setCurrentPage(currentPage + 1)}
                     >

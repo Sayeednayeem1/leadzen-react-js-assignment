@@ -30,7 +30,7 @@ const DetailsModal = ({ modalDataDetail }) => {
                                     <td>{address?.city}</td>
                                     <td>{address?.street}</td>
                                     <td><div className="modal-action">
-                                        <label htmlFor="table-details-modal" className="btn btn-xs bg-orange-600 border-none">Close</label>
+                                        <label htmlFor="table-details-modal" className="btn btn-xs bg-red-600 border-none">Close</label>
                                     </div></td>
                                 </tr>
                             </tbody>
